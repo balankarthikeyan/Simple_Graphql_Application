@@ -1,3 +1,6 @@
+/**
+ * importing the packages, styles and graphql-apollo to use inside the class components
+ */
 import React from 'react'
 import { client } from './client'
 import { Courses } from './Courses'
@@ -5,6 +8,9 @@ import '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import { ApolloProvider } from 'react-apollo'
 
 class Graphql extends React.Component {
+    /**
+     * default render method of class
+     */
     render() {
         return (
             <ApolloProvider client={client}>
@@ -21,5 +27,8 @@ class Graphql extends React.Component {
     }
 }
 
+/**
+ * exporting the Graphql to use anywhere
+ */
 export { Graphql }
 export default { Graphql }

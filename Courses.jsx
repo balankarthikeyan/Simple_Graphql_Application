@@ -1,8 +1,15 @@
+/**
+ * importing the packages, styles and graphql-apollo to use inside the functional components
+ */
 import React from 'react'
 import { Query } from "react-apollo"
 import gql from "graphql-tag"
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
 
+/**
+ * Course functional component will used to render some html tags,
+ * after the successful response
+ */
 const Course = (props) => (
     <div className="card" style={{'width': '100%', 'marginTop': '10px'}}>
         <div className="card-body">
@@ -14,6 +21,9 @@ const Course = (props) => (
     </div>
 )
 
+/**
+ * Declaring the graphql query with COURSE const
+ */
 const COURSE = gql`
   query AllCourses {
     allCourses {
@@ -25,6 +35,10 @@ const COURSE = gql`
   }
 `
 
+/**
+ * Courses functional component is used to call the constructed query and Course component
+ * It will render the response status and responding components
+ */
 const Courses = () => (
   <Query 
     query={COURSE}
@@ -40,5 +54,8 @@ const Courses = () => (
   </Query>
 )
 
+/**
+ * exporting Courses to access anywhere
+ */
 export { Courses }
 export default Courses
